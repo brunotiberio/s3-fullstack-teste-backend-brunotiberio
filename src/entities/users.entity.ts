@@ -18,10 +18,10 @@ export class User {
   @Exclude()
   password: string;
 
-  @Column()
+  @Column('text', {array: true})
   emails: string[];
 
-  @Column()
+  @Column('text', {array: true})
   phones: string[];
 
   @Column()
