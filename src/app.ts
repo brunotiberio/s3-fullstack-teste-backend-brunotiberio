@@ -12,6 +12,6 @@ app.use("/", (req: Request, res: Response) => {
   );
 });
 
-app.use(errorMiddleware)
+app.use(errorMiddleware);
 
 export default app;
