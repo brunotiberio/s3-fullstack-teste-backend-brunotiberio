@@ -1,6 +1,7 @@
 import express, { Request, Response } from "express";
 import appRoutes from "./routes/index.routes";
 import { errorMiddleware } from "./middlewares/error.middleware";
+import "dotenv/config";
 
 const app = express();
 app.use(express.json());
@@ -12,6 +13,12 @@ app.use("/", (req: Request, res: Response) => {
   );
 });
 
+const PORT = process.env.PORT || 3000;
+
 app.use(errorMiddleware);
+
+app.listen(PORT, () => {
+  console.log("Servidor executando na porta " + PORT);
+});
 
 export default app;
