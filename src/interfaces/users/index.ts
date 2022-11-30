@@ -1,6 +1,6 @@
 export interface IUser {
   id: string;
-  name: string;
+  fullname: string;
   username: string;
   password: string;
   emails: string[];
@@ -10,7 +10,7 @@ export interface IUser {
 }
 
 export interface IUserRequest {
-  name: string;
+  fullname: string;
   username: string;
   password: string;
   emails: string[];
@@ -19,7 +19,7 @@ export interface IUserRequest {
 
 export interface IUserPatchRequest {
   id: string;
-  name?: string;
+  fullname?: string;
   username?: string;
   password?: string;
   emails?: string[];
