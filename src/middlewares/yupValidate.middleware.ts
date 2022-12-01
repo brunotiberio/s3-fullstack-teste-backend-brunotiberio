@@ -10,7 +10,7 @@ const yupValidateMiddleware =
       await schema.validate(data, { abortEarly: false });
       next();
     } catch (error: any) {
-      throw new AppError(400, error.errors.join("; "));
+      throw new AppError(400, error.errors);
     }
   };
 
