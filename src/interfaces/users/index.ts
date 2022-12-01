@@ -26,6 +26,10 @@ export interface IUserPatchRequest {
   phones?: string[];
 }
 
+export interface updateUserReqInfos {
+  userId: string;
+}
+
 export interface IUserLogin {
   username: string;
   password: string;
