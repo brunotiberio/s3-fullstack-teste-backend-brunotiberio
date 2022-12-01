@@ -3,7 +3,7 @@ import { AppError } from "../errors/appError";
 import { User } from "../entities/users.entity";
 import { AppDataSource } from "../data-source";
 
-const verifyEmailAvailabilityMiddleware = async (
+const verifyUsernameAvailabilityMiddleware = async (
   req: Request,
   res: Response,
   next: NextFunction
@@ -24,4 +24,4 @@ const verifyEmailAvailabilityMiddleware = async (
   next();
 };
 
-export default verifyEmailAvailabilityMiddleware;
+export default verifyUsernameAvailabilityMiddleware;
