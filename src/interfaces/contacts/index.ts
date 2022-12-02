@@ -12,6 +12,7 @@ export interface IContactRequest {
 }
 
 export interface IContactPatchRequest {
+  id: string;
   fullname?: string;
   emails?: string[];
   phones?: string[];
