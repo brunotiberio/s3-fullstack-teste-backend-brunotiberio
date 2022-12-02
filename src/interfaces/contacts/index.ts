@@ -5,13 +5,14 @@ export interface IContact {
   phones: string[];
 }
 
-export interface IUserRequest {
+export interface IContactRequest {
   fullname: string;
   emails: string[];
   phones: string[];
 }
 
-export interface IUserPatchRequest {
+export interface IContactPatchRequest {
+  id: string;
   fullname?: string;
   emails?: string[];
   phones?: string[];
