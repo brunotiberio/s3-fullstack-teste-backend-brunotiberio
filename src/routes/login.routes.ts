@@ -1,6 +1,7 @@
 import { Router } from "express";
-import yupValidateMiddleware from "../middlewares/yupValidate.middleware";
 import { postLoginSchema } from "../schemas/postLogin.schema";
+
+import yupValidateMiddleware from "../middlewares/yupValidate.middleware";
 
 import userLoginController from "../controllers/login/userLogin.controller";
 
