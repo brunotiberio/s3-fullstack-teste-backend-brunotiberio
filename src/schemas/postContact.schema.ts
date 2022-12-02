@@ -7,3 +7,5 @@ export const postContactSchema: SchemaOf<IContactRequest> = yup.object().shape({
   emails: yup.array().required("'Email é obrigatório'"),
   phones: yup.array().required("'Telefone é obrigatório'"),
 });
+
+export default postContactSchema
