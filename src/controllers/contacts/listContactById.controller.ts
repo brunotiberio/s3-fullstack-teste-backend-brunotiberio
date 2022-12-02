@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import listContactByIdService from "../../services/contacts/listNewsId.service";
+import listContactByIdService from "../../services/contacts/listContactById.service";
 
 const listContactByIdController = async (req: Request, res: Response) => {
   const id = req.params.id;
