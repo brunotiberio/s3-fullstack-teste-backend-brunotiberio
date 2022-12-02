@@ -5,7 +5,6 @@ import { AppError } from "../../errors/appError";
 const deleteUserByIdService = async (id: string) => {
   const userRepository = AppDataSource.getRepository(User);
   const userDeleted = await userRepository.findOneBy({ id: id });
-
   if (!userDeleted) {
     throw new AppError(404, "Usuário não encontrado");
   }

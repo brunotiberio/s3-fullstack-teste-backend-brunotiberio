@@ -4,15 +4,15 @@ import { AppError } from "../../errors/appError";
 
 const listContactByUserService = async (userId: string) => {
   const usersRepository = AppDataSource.getRepository(User);
-  const user = await usersRepository.findOneBy({
-    id: userId,
-  });
+  const users = await usersRepository.find()
+  const userExists = users.find(user => user.id === userId)
+  console.log(userExists)
 
-  if (user?.id !== userId) {
+  if (!userExists) {
     throw new AppError(404, "Usuário não encontrado");
   }
 
-  return user.contacts;
+  return userExists.contacts
 };
 
 export default listContactByUserService;
