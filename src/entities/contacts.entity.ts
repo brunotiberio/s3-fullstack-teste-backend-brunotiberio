@@ -1,6 +1,7 @@
 import { Column, Entity, ManyToOne, PrimaryColumn } from "typeorm";
 import { v4 as uuid } from "uuid";
 import { User } from "./users.entity";
+import { Exclude } from "class-transformer";
 
 @Entity("contacts")
 export class Contact {
@@ -16,7 +17,8 @@ export class Contact {
   @Column('text', {array: true})
   phones: string[];
 
-  @ManyToOne((type) => User, (user) => user.contacts)
+  @Exclude()
+  @ManyToOne((type) => User, (user) => user.contacts, {onDelete:'CASCADE'})
   user: User;
 
   constructor() {
