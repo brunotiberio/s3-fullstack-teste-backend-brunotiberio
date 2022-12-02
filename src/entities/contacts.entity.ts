@@ -11,14 +11,14 @@ export class Contact {
   @Column()
   fullname: string;
 
-  @Column('text', {array: true})
+  @Column("text", { array: true })
   emails: string[];
 
-  @Column('text', {array: true})
+  @Column("text", { array: true })
   phones: string[];
 
   @Exclude()
-  @ManyToOne((type) => User, (user) => user.contacts, {onDelete:'CASCADE'})
+  @ManyToOne((type) => User, (user) => user.contacts, { onDelete: "CASCADE" })
   user: User;
 
   constructor() {
