@@ -8,7 +8,7 @@ export const postUserSchema: SchemaOf<IUserRequest> = yup.object().shape({
   password: yup.string().required("Senha é obrigatória"),
   emails: yup
     .array()
-    .of(yup.string().email().required("Email é obrigatório"))
+    .of(yup.string().required("Email é obrigatório"))
     .required("Email é obrigatório"),
   phones: yup
     .array()
