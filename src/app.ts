@@ -4,9 +4,13 @@ import appRoutes from "./routes/index.routes";
 import { errorMiddleware } from "./middlewares/error.middleware";
 import "dotenv/config";
 
+var cors = require('cors')
 const app = express();
 app.use(express.json());
+app.use(cors())
 appRoutes(app);
+
+
 
 app.use("/", (req: Request, res: Response) => {
   return res.send(
@@ -14,7 +18,7 @@ app.use("/", (req: Request, res: Response) => {
   );
 });
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 4000;
 
 app.use(errorMiddleware);
 
