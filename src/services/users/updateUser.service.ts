@@ -38,6 +38,22 @@ const updateUserService = async (patchRequest: IUserPatchRequest) => {
 
   const updatedUser = await userRepository.findOneBy({ id: patchRequest.id });
 
+  updatedUser?.contacts.sort((a,b) => {
+
+    const nameA = a.fullname.toUpperCase(); 
+    const nameB = b.fullname.toUpperCase(); 
+
+    if(nameA < nameB){
+      return -1
+    }
+
+    if(nameA > nameB){
+      return 1
+    }
+
+    return 0
+  })
+
   return updatedUser;
 };
 
